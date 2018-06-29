@@ -3,19 +3,19 @@
 
 name = "Academimal"
 license = "MIT"
-licenselink = "https://github.com/yourname/yourtheme/blob/master/LICENSE"
-description = ""
-homepage = "http://example.com/"
+licenselink = "https://github.com/yangl1996/academimal/blob/master/LICENSE"
+description = "An uncluttered theme for academic researchers."
+homepage = ""
 tags = []
 features = []
 min_version = "0.41"
 
 [author]
-  name = ""
-  homepage = ""
+  name = "Lei Yang"
+  homepage = "http://leiy.me"
 
 # If porting an existing theme
 [original]
-  name = ""
-  homepage = ""
-  repo = ""
+  name = "Minimal"
+  homepage = "https://pages-themes.github.io/minimal/"
+  repo = "https://github.com/pages-themes/minimal"
