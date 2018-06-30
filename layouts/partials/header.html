@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ .Site.Title }} | {{ .Title }}</title>
+    <link rel="stylesheet" href="{{ "/css/style.css" | relURL }}">
+    <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>{{ .Site.Title }}</h1>
+		
+		<!-- begin photo -->
+        {{ with .Site.Params.logo }}
+			<img src="{{ . | relURL }}" alt="Logo" />
+        {{ end }}
+		<!-- end photo -->
+
+        <!-- begin short bio -->
+        <p>{{ .Site.Params.shortbio }}</p>
+        <!-- end short bio -->
+		
+		<!-- begin electronic post -->
+        <p>
+            <img src="static/mail-symbol.svg" class="octicons">
+            {{ partial "mail.html" . }}
+        </p>
+		<!-- end electronic post -->
+
+        <!-- begin openpgp public key -->
+        <p>
+            <img src="static/key-symbol.svg" alt="OpenPGP:" class="octicons">
+            <a href="{{ .Site.Params.pgp-pubkey-link }}" target="_blank">
+                <span class="pgp-fingerprint">
+                    <span>{{ slicestr .Site.Params.pgp-pubkey 0 4 }}</span>
+                    <span>{{ slicestr .Site.Params.pgp-pubkey 4 8 }}</span>
+                    <span>{{ slicestr .Site.Params.pgp-pubkey 8 12 }}</span>
+                    <span>{{ slicestr .Site.Params.pgp-pubkey 12 16 }}</span>
+                </span>
+            </a>
+        </p>
+        <!-- end openpgp public key-->
+		
+		<hr/>
+        {{ partial "sidebar.html" . }} 
+      </header>
