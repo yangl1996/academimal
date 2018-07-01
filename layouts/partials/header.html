@@ -24,14 +24,14 @@
 		
 		<!-- begin electronic post -->
         <p>
-            <img src="icons/mail-symbol.svg" class="octicons">
+          <img src="{{ "/icons/mail-symbol.svg" | relURL }}" class="octicons">
             {{ partial "mail.html" . }}
         </p>
 		<!-- end electronic post -->
 
         <!-- begin openpgp public key -->
         <p>
-            <img src="icons/key-symbol.svg" alt="OpenPGP:" class="octicons">
+          <img src="{{ "/icons/key-symbol.svg" | relURL }}" alt="OpenPGP:" class="octicons">
             <a href="{{ .Site.Params.PGPPubkeyLink }}" target="_blank">
                 <span class="pgp-fingerprint">
                     <span>{{ slicestr .Site.Params.PGPFingerprint 0 4 }}</span>
