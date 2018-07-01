@@ -27,20 +27,20 @@
 		
 		<!-- begin electronic post -->
         <p>
-            <img src="static/mail-symbol.svg" class="octicons">
+            <img src="icons/mail-symbol.svg" class="octicons">
             {{ partial "mail.html" . }}
         </p>
 		<!-- end electronic post -->
 
         <!-- begin openpgp public key -->
         <p>
-            <img src="static/key-symbol.svg" alt="OpenPGP:" class="octicons">
-            <a href="{{ .Site.Params.pgp-pubkey-link }}" target="_blank">
+            <img src="icons/key-symbol.svg" alt="OpenPGP:" class="octicons">
+            <a href="{{ .Site.Params.PGPPubkeyLink }}" target="_blank">
                 <span class="pgp-fingerprint">
-                    <span>{{ slicestr .Site.Params.pgp-pubkey 0 4 }}</span>
-                    <span>{{ slicestr .Site.Params.pgp-pubkey 4 8 }}</span>
-                    <span>{{ slicestr .Site.Params.pgp-pubkey 8 12 }}</span>
-                    <span>{{ slicestr .Site.Params.pgp-pubkey 12 16 }}</span>
+                    <span>{{ slicestr .Site.Params.PGPFingerprint 0 4 }}</span>
+                    <span>{{ slicestr .Site.Params.PGPFingerprint 4 8 }}</span>
+                    <span>{{ slicestr .Site.Params.PGPFingerprint 8 12 }}</span>
+                    <span>{{ slicestr .Site.Params.PGPFingerprint 12 16 }}</span>
                 </span>
             </a>
         </p>

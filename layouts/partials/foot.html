@@ -1,9 +1,9 @@
       <footer>
-        <p><small>Copyright © 2010-{{ .Now.Format "2006" }} Lei Yang<br/>Theme based on <a href="https://github.com/pages-themes/minimal">Minimal</a></small></p>
-        <p><small>Last updated on {{ .Now.Format "Jan 2, 2006" }}</small></p>
+        <p><small>Copyright © 2010-{{ now.Format "2006" }} Lei Yang<br/>Theme based on <a href="https://github.com/pages-themes/minimal">Minimal</a></small></p>
+        <p><small>Last updated on {{ now.Format "Jan 2, 2006" }}</small></p>
       </footer>
     </div>
-    <script src="{{ "/assets/js/scale.fix.js" | relURL }}"></script>
+    <script src="{{ "js/scale.fix.js" | relURL }}"></script>
     {{ template "_internal/google_analytics_async.html" . }}
   </body>
 </html>
