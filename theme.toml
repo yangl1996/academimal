@@ -4,7 +4,7 @@
 name = "Academimal"
 license = "MIT"
 licenselink = "https://github.com/yangl1996/academimal/blob/master/LICENSE"
-description = "An uncluttered theme for academic researchers."
+description = "An uncluttered Hugo theme for academic researchers."
 homepage = ""
 tags = []
 features = []
