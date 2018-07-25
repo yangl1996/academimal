@@ -42,6 +42,15 @@
             </a>
         </p>
         <!-- end openpgp public key-->
+
+        <!-- begin orcid -->
+        <p>
+          <img src="{{ "/icons/orcid-black.svg" | relURL }}" class="octicons">
+          <a href="https://orcid.org/{{ .Site.Params.ORCID }}" target="_blank">
+              orcid.org/{{ .Site.Params.ORCID }}
+          </a>
+        </p>
+        <!-- end orcid -->
 		
 		<hr/>
         {{ partial "sidebar.html" . }} 
