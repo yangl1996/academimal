@@ -23,14 +23,23 @@
         <!-- end short bio -->
 		
 		<!-- begin electronic post -->
-        <p>
+        <p class="contactinfo">
           <img src="{{ "/icons/mail-symbol.svg" | relURL }}" class="octicons">
             {{ partial "mail.html" . }}
         </p>
 		<!-- end electronic post -->
 
+        <!-- begin physical location -->
+        <p class="contactinfo">
+          <img src="{{ "/icons/location-symbol.svg" | relURL }}" class="octicons">
+          <a href="{{ .Site.Params.officeMapLink }}" target="_blank">
+              {{ .Site.Params.officeAddress }}
+          </a>
+        </p>
+        <!-- end physical location -->
+
         <!-- begin openpgp public key -->
-        <p>
+        <p class="contactinfo">
           <img src="{{ "/icons/key-symbol.svg" | relURL }}" alt="OpenPGP:" class="octicons">
             <a href="{{ .Site.Params.PGPPubkeyLink }}" target="_blank">
                 <span class="pgp-fingerprint">
@@ -44,7 +53,7 @@
         <!-- end openpgp public key-->
 
         <!-- begin orcid -->
-        <p>
+        <p class="lastcontactinfo">
           <img src="{{ "/icons/orcid-black.svg" | relURL }}" class="octicons">
           <a href="https://orcid.org/{{ .Site.Params.ORCID }}" target="_blank">
               orcid.org/{{ .Site.Params.ORCID }}
