@@ -1,8 +1,7 @@
-<p><a href="{{ "/" | relURL }}">Home</a></p>
-{{ range .Site.Menus.main }}
-<p><a href="{{ .URL | relURL }}">{{- .Name -}}</a></p>
-{{ end }}
-<hr/>
-<p><a href="https://scholar.google.com/citations?user=jTzL3e8AAAAJ&hl=en" target="_blank">Google Scholar</a></p>
-<p><a href="http://github.com/yangl1996" target="_blank">GitHub</a></p>
-<p><a href="http://blog.yangl1996.com" target="_blank">Blog (Chinese)</a></p>
+<p class="contactinfo"><a href="{{ "#bio" | relURL }}">Bio</a></p>
+<p class="contactinfo"><a href="{{ "#contact" | relURL }}">Contact</a></p>
+<p class="contactinfo"><a href="{{ "#publications" | relURL }}">Publications</a></p>
+<p class="contactinfo"><a href="{{ "#workingpapers" | relURL }}">Working Papers</a></p>
+<p class="contactinfo"><a href="{{ "#workinprogress" | relURL }}">Work in Progress</a></p>
+<p class="contactinfo"><a href="{{ "#fromanotherlife" | relURL }}">From Another Life</a></p>
+<p class="lastcontactinfo"><a href="{{ "#personal" | relURL }}">Personal</a></p>

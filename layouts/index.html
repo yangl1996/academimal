@@ -1,3 +1,64 @@
 {{ define "main" -}}
+<h2 id="bio">Bio</h2>
+{{ with .GetPage "/sections/aboutme.md" }}
+{{ .Content }}
+{{ end }}
+
+<hr>
+
+<h2 id="contact">Contact</h2>
+{{ with .GetPage "/sections/contact.md" }}
+{{ .Content }}
+{{ end }}
+
+<hr>
+
+{{ $scratch := newScratch }}
+{{ $scratch.Set "pubcnt" 0 }}
+
+<h2 id="publications">Publications</h2>
+{{ range .Site.Data.publications }}
+{{ range .works }}
+{{ partial "publication.html" (dict "context" . "pid" ($scratch.Get "pubcnt")) }}
+{{ $scratch.Add "pubcnt" 1 }}   
+{{ end }}
+{{ end }}
+
+<hr>
+
+<h2 id="workingpapers">Working Papers</h2>
+{{ range .Site.Data.working_papers }}
+{{ range .works }}
+{{ partial "publication.html" (dict "context" . "pid" ($scratch.Get "pubcnt")) }}
+{{ $scratch.Add "pubcnt" 1 }}   
+{{ end }}
+{{ end }}
+
+<hr>
+
+<h2 id="workinprogress">Work in Progress</h2>
+{{ range .Site.Data.work_in_progress }}
+{{ range .works }}
+{{ partial "publication.html" (dict "context" . "pid" ($scratch.Get "pubcnt")) }}
+{{ $scratch.Add "pubcnt" 1 }}   
+{{ end }}
+{{ end }}
+
+<hr>
+
+<h2 id="fromanotherlife">From Another Life</h2>
+{{ with .GetPage "/sections/from-another-life.md" }}
+{{ .Content }}
+{{ end }}
+
+<hr>
+
+<h2 id="personal">Personal</h2>
+{{ with .GetPage "/sections/personal.md" }}
+{{ .Content }}
+{{ end }}
+
+<hr>
+
 {{ .Content }}
 {{- end }}

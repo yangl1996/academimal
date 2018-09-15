@@ -1,0 +1,17 @@
+<h3>{{ .context.title }}</h3>
+
+<ul>
+    {{ with .context.note }}<li>{{ . }}</li>{{ end }}
+    {{ with .context.coauthors }}<li><b>Coauthors</b>: {{ . }}</li>{{ end }}
+    {{ with .context.book }}<li><b>Published in</b> {{ . }}</li>{{ end }}
+    {{ $pid := .pid }}
+    {{ with .context.abstract }}<li><b><a href="javascript:toggle({{ $pid }})">Abstract<span id="pubabslink_{{ $pid }}"> (click to expand)</span></a></b><span id="pubabs_{{ $pid }}" style="display:none;">: {{ . }}</span></li>{{ end }}
+    {{ with .context.links }}<li><b>Links</b><ul>
+    {{ range . }}
+        <li><a href="{{ .url }}" target="blank">{{ .text }}</a>{{ with .note }}: {{ . }}){{ end }}</li>
+    {{ end }}
+    </ul>
+    </li>
+    {{ end }}
+</ul>
+
