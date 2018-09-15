@@ -1,4 +1,4 @@
-<h3>{{ .context.title }}</h3>
+<h3>{{ .context.title }}{{ with .context.pdflink }} [<a href="{{ . }}" target="blank"><img src="{{ "/icons/pdf-symbol.svg" | relURL }}" alt="PDF" style="height:1em; bottom:-0.12em; position:relative;"> Fulltext</a>]{{ end }}</h3>
 
 <ul>
     {{ with .context.note }}<li>{{ . }}</li>{{ end }}
