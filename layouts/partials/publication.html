@@ -1,17 +1,15 @@
-<h3>{{ .context.title }}{{ with .context.pdflink }} [<a href="{{ . }}" target="blank"><img src="{{ "/icons/pdf-symbol.svg" | relURL }}" alt="PDF" style="height:1em; bottom:-0.12em; position:relative;"> Fulltext</a>]{{ end }}</h3>
+<h3 style="margin:20px 0 5px;">{{ with .context.pdflink }}<a href="{{ . }}" target="blank">{{ end }}{{ .context.title }}{{ with .context.pdflink }}</a>{{ end }}</h3>
 
-<ul>
-    {{ with .context.note }}<li>{{ . }}</li>{{ end }}
-    {{ with .context.coauthors }}<li><b>Coauthors</b>: {{ . }}</li>{{ end }}
-    {{ with .context.book }}<li><b>Published in</b> {{ . }}</li>{{ end }}
-    {{ $pid := .pid }}
-    {{ with .context.abstract }}<li><b><a href="javascript:toggle({{ $pid }})">Abstract<span id="pubabslink_{{ $pid }}"> (click to expand)</span></a></b><span id="pubabs_{{ $pid }}" style="display:none;">: {{ . }}</span></li>{{ end }}
-    {{ with .context.links }}<li><b>Links</b><ul>
-    {{ range . }}
-        <li><a href="{{ .url }}" target="blank">{{ .text }}</a>{{ with .note }}: {{ . }}){{ end }}</li>
-    {{ end }}
-    </ul>
-    </li>
-    {{ end }}
-</ul>
+{{ with .context.coauthors }}<p style="margin:0 0 5px;">(with {{ . }})</p>{{ end }}
+
+{{ with .context.book }}<p style="margin:0 0 5px;"><em>{{ . }}</em></p>{{ end }}
+{{ with .context.note }}<p style="margin:0 0 5px;">{{ . }}</p>{{ end }}
+{{ $pid := .pid }}
+{{ with .context.abstract }}<p style="margin:0 0 5px;"><a href="javascript:toggle({{ $pid }})">Abstract<span id="pubabslink_{{ $pid }}"> (click to expand)</span></a><span id="pubabs_{{ $pid }}" style="display:none;">: {{ . }}</span></p>{{ end }}
+
+{{ with .context.links }}
+{{ range . }}
+<p style="margin:0 0 5px;"><a href="{{ .url }}" target="blank">{{ .text }}</a>{{ with .note }}: {{ . }}{{ end }}</li>
+{{ end }}
+{{ end }}
 
