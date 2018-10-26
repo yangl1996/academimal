@@ -7,7 +7,7 @@
     <p>
         <strong>{{ .title }}</strong><br>
         {{ delimit ( apply .authors "replace" "." "Lei Yang" "<em>Lei Yang</em>" ) ", " }}<br>
-        {{ .book }}, {{ with .month }}{{ dateFormat "January" . }} {{ end }}{{ .year }}
+        {{ .book }}, {{ .date }}
         {{ with .remarks }}
         - <strong>{{ with .link }}<a href="{{ . }}" target="blank">{{ end }}{{ .text }}{{ with .link }}</a>{{ end }}</strong>
         {{ end }}
