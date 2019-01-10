@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{{ .Site.Title }} | {{ .Title }}</title>
     <link rel="stylesheet" href="{{ "/css/style.css" | relURL }}">
+    <!--<link rel="stylesheet" href="{{ "/css/academicons.css" | relURL }}"/>-->
   </head>
   <body>
     <div class="wrapper">
@@ -22,15 +23,16 @@
         <p>{{ .Site.Params.shortbio }}</p>
         <!-- end short bio -->
 		
+        <div class="compact-sidebar">
 		<!-- begin electronic post -->
-        <p class="contactinfo">
+        <p>
           <img src="{{ "/icons/mail-symbol.svg" | relURL }}" class="octicons">
             {{ partial "mail.html" . }}
         </p>
 		<!-- end electronic post -->
 
         <!-- begin physical location -->
-        <p class="contactinfo">
+        <p>
           <img src="{{ "/icons/location-symbol.svg" | relURL }}" class="octicons">
           <a href="{{ .Site.Params.officeMapLink }}" target="_blank">
               {{ .Site.Params.officeAddress }}
@@ -39,27 +41,23 @@
         <!-- end physical location -->
 
         <!-- begin openpgp public key -->
-        <p class="contactinfo">
+        <p>
           <img src="{{ "/icons/key-symbol.svg" | relURL }}" alt="OpenPGP:" class="octicons">
             <a href="{{ .Site.Params.PGPPubkeyLink }}" target="_blank">
-                <span class="pgp-fingerprint">
-                    <span>{{ slicestr .Site.Params.PGPFingerprint 0 4 }}</span>
-                    <span>{{ slicestr .Site.Params.PGPFingerprint 4 8 }}</span>
-                    <span>{{ slicestr .Site.Params.PGPFingerprint 8 12 }}</span>
-                    <span>{{ slicestr .Site.Params.PGPFingerprint 12 16 }}</span>
-                </span>
+                <span class="pgp-fingerprint"><span>{{- slicestr .Site.Params.PGPFingerprint 0 4 -}}</span><span>{{- slicestr .Site.Params.PGPFingerprint 4 8 -}}</span><span>{{- slicestr .Site.Params.PGPFingerprint 8 12 -}}</span><span>{{- slicestr .Site.Params.PGPFingerprint 12 16 -}}</span></span>
             </a>
         </p>
         <!-- end openpgp public key-->
 
         <!-- begin orcid -->
-        <p class="lastcontactinfo">
+        <p>
           <img src="{{ "/icons/orcid-black.svg" | relURL }}" class="octicons">
           <a href="https://orcid.org/{{ .Site.Params.ORCID }}" target="_blank">
               orcid.org/{{ .Site.Params.ORCID }}
           </a>
         </p>
         <!-- end orcid -->
+        </div>
 		
 		<hr/>
         {{ partial "sidebar.html" . }} 

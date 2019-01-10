@@ -249,18 +249,11 @@ h1, h2, h3, h4, h5, h6 {
 p, ul, ol, table, pre, dl {
   margin: 0 0 20px; }
 
-p.contactinfo {
+.compact-sidebar p {
   margin: 0 0 10px; }
 
-p.lastcontactinfo {
+.compact-sidebar p:last-of-type {
   margin: 0 0 20px; }
-
-p img.inline-logo {
-  display: inline-flex;
-  align-self: center;
-  position: relative;
-  height: 0.8em;
-  bottom: -0.04em; }
 
 p img.octicons {
   display: inline-flex;
@@ -269,14 +262,11 @@ p img.octicons {
   height: 1.2em;
   bottom: -0.16em; }
 
-p span.hideit {
-  display: none; }
-
 .pgp-fingerprint span:first-child {
   padding-left: 0; }
 
 .pgp-fingerprint span {
-  padding-left: 1px; }
+  padding-left: 5px; }
 
 h1, h2, h3 {
   line-height: 1.1; }
