@@ -17,6 +17,10 @@
                 <p>{{ .Site.Params.shortbio }}</p>
                 <!-- end short bio -->
 
+		{{ with .Site.Params.shortbio2 }}
+		<p>{{ . }}</p>
+		{{ end }}
+
                 {{/*
                 <p class="contactinfo">
                 <img src="{{ "/icons/mail-symbol.svg" | relURL }}" class="octicons">
