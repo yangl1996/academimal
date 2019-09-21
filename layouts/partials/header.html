@@ -30,7 +30,7 @@
 
                 <hr/>
 
-                {{ partial "sidebar.html" . }} 
+                {{/* partial "sidebar.html" . */}} 
 
                 <!-- begin photo -->
                 {{ with .Site.Params.logo }}
@@ -38,4 +38,9 @@
                 {{ end }}
                 <!-- end photo -->
 
+                <hr/>
+
+		{{ with .Site.Params.contact }}
+		{{ . | markdownify }}
+		{{ end }}
             </header>
