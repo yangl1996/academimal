@@ -11,6 +11,9 @@
         {{ with .remarks }}
         - <strong>{{ with .link }}<a href="{{ . }}" target="blank">{{ end }}{{ .text }}{{ with .link }}</a>{{ end }}</strong>
         {{ end }}
+        {{ with .links }}
+        <br>{{ range first 1 . }}<a href="{{ .link }}" target="blank">{{ .text }}</a>{{ end }}{{ range after 1 . }}, <a href="{{ .link }}" target="blank">{{ .text}}</a>{{ end }}
+        {{ end }}
     </p>
     {{ end }}
     {{ end }}
@@ -23,6 +26,9 @@
         {{ .book }}, {{ .date }}
         {{ with .remarks }}
         - <strong>{{ with .link }}<a href="{{ . }}" target="blank">{{ end }}{{ .text }}{{ with .link }}</a>{{ end }}</strong>
+        {{ end }}
+        {{ with .links }}
+        <br>{{ range first 1 . }}<a href="{{ .link }}" target="blank">{{ .text }}</a>{{ end }}{{ range after 1 . }}, <a href="{{ .link }}" target="blank">{{ .text}}</a>{{ end }}
         {{ end }}
     </p>
     {{ end }}
