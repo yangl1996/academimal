@@ -3,6 +3,7 @@
 </footer>
 </div>
 <script src="{{ "js/scale.fix.js" | relURL }}"></script>
-{{ template "_internal/google_analytics_async.html" . }}
+<script data-goatcounter="https://{{ .Site.Params.goatcounter }}.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
 </body>
 </html>
