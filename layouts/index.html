@@ -39,8 +39,8 @@
 <p class="p1"><span class="s1">{{ range . }} {{ range .works }} {{ partial "publication.html" (dict "context" . "pid" ($scratch.Get "pubcnt")) }} {{ $scratch.Add "pubcnt" 1 }} {{ end }} {{ end }} {{ end }} {{ with .GetPage "/sections/from-another-life.md" }}</span></p>
 <p class="p3"><span class="s1"><br>
 </span></p>
-<p class="p2"><span class="s1"><b>Site</b></span></p>
-<p class="p1"><span class="s1">{{ .Content }} {{ end }} {{ with .GetPage "/sections/site.md" }}</span></p>
+<p class="p2"><span class="s1"><b>Other Publications</b></span></p>
+<p class="p1"><span class="s1">{{ .Content }} {{ end }} {{ with .GetPage "/sections/op.md" }}</span></p>
 <p class="p3"><span class="s1"><br>
 </span></p>
 <p class="p2"><span class="s1"><b>Person</b></span></p>
