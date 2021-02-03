@@ -1,3 +1,24 @@
-{{ define "main" -}}
-{{ .Content }}
-{{- end }}
+{ define "main" -}}
+Bio
+{{ with .GetPage "/sections/aboutme.md" }} {{ .Content }} {{ end }} {{ with .GetPage "/sections/contact.md" }}
+
+Contact
+{{ .Content }} {{ end }} {{ with .GetPage "/sections/office-hours.md" }}
+
+Office Hours
+{{ .Content }} {{ end }} {{ $scratch := newScratch }} {{ $scratch.Set "pubcnt" 0 }} {{ with .Site.Data.publications }}
+
+Publications
+{{ range . }} {{ range .works }} {{ partial "publication.html" (dict "context" . "pid" ($scratch.Get "pubcnt")) }} {{ $scratch.Add "pubcnt" 1 }} {{ end }} {{ end }} {{ end }} {{ with .Site.Data.working_papers }}
+
+Working Papers
+{{ range . }} {{ range .works }} {{ partial "publication.html" (dict "context" . "pid" ($scratch.Get "pubcnt")) }} {{ $scratch.Add "pubcnt" 1 }} {{ end }} {{ end }} {{ end }} {{ with .Site.Data.work_in_progress }}
+
+Work in Progress
+{{ range . }} {{ range .works }} {{ partial "publication.html" (dict "context" . "pid" ($scratch.Get "pubcnt")) }} {{ $scratch.Add "pubcnt" 1 }} {{ end }} {{ end }} {{ end }} {{ with .GetPage "/sections/from-another-life.md" }}
+
+Site
+{{ .Content }} {{ end }} {{ with .GetPage "/sections/site.md" }}
+
+Personal
+{{ .Content }} {{ end }} {{ .Content }} {{- end }} 
