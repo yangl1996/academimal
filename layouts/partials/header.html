@@ -49,14 +49,17 @@
         </p>
         <!-- end openpgp public key-->
 
+        {{ with .Site.Params.ORCID }}
         <!-- begin orcid -->
         <p>
           <img src="{{ "/icons/orcid-black.svg" | relURL }}" class="octicons">
-          <a href="https://orcid.org/{{ .Site.Params.ORCID }}" target="_blank">
-              orcid.org/{{ .Site.Params.ORCID }}
+          <a href="https://orcid.org/{{ . }}" target="_blank">
+              orcid.org/{{ . }}
           </a>
         </p>
         <!-- end orcid -->
+        {{ end }}
+
         </div>
 		
 		<hr/>
